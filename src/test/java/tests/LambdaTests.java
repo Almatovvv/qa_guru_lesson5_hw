@@ -25,5 +25,4 @@ public class LambdaTests {
 
         step("Issue number existence validation " + po.issueNumber, () -> $(withText(po.issueNumber)).shouldBe(Condition.visible));
     }
-
 }
