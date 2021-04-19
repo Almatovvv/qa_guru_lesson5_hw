@@ -13,25 +13,26 @@ def selenideVersion = "5.20.1",
     junitVersion = "5.7.1",
     slf4jVersion = "1.7.30",
     javafakerVersion = "1.0.2",
+    allureVersion = "2.13.8",
     aspectjVersion = "1.9.6"
 
 dependencies {
-    testImplementation (
+    testImplementation(
             "com.codeborne:selenide:$selenideVersion",
             "org.junit.jupiter:junit-jupiter-api:$junitVersion",
             "com.github.javafaker:javafaker:${javafakerVersion}",
             "org.aspectj:aspectjweaver:${aspectjVersion}",
     )
-    testRuntimeOnly ("org.junit.jupiter:junit-jupiter-engine:$junitVersion",
-                     "org.slf4j:slf4j-simple:${slf4jVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion",
+            "org.slf4j:slf4j-simple:${slf4jVersion}")
 }
 
 allure {
     autoconfigure = true
-    version = '2.13.8'
+    version = "${allureVersion}"
     aspectjweaver = true
     useJUnit5 {
-        version = '2.13.8'
+        version = "${allureVersion}"
     }
 }
 
